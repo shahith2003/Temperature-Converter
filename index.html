@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Celsius to Fahrenheit</h2>
+        <div class="inputdiv">
+            <input type="text" id="input1" placeholder="Degree in Celsius">
+        </div>
+        <div>
+            <button type="submit" onclick="convert1()">Convert to Fahrenheit</button>
+        </div>
+        <div id="result1">
+            
+        </div>
+    </div>
+    <div id="wrapper">
+        <h2>Fahrenheit to Celsius</h2>
+        <div class="inputdiv">
+            <input type="text" id="input2" placeholder="Degree in Fahrenheit">
+        </div>
+        <div>
+            <button type="submit" onclick="convert2()">Convert to Celsius</button>
+        </div>
+        <div id="result2">
+            
+        </div>
+    </div>
+    <script>
+        function convert1(){
+         const celval = Number(document.getElementById("input1").value)
+         const fahval = (celval*(9/5))+32
+         const result1 =  document.getElementById("result1")
+         result1.innerHTML = fahval.toFixed(2) +" Fahrenheit"
+        }
+        function convert2(){
+         const fahval = Number(document.getElementById("input2").value)
+         const celval = (fahval-32)/(9/5)
+         const result2 =  document.getElementById("result2")
+         result2.innerHTML = celval.toFixed(2) +" Celsius"
+        }
+    </script>
+</body>
+</html>
